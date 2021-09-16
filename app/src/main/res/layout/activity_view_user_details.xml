@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ViewUserDetails">
+
+    <TextView
+        android:id="@+id/users_name"
+        android:layout_width="321dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="96dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/name"
+        app:layout_constraintBottom_toTopOf="@+id/users_contact"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/users_contact"
+        android:layout_width="321dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/contact_number"
+        app:layout_constraintBottom_toTopOf="@+id/users_accno"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/users_name"
+        app:layout_constraintVertical_bias="0.344" />
+
+    <TextView
+        android:id="@+id/users_accno"
+        android:layout_width="321dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/account_number"
+        app:layout_constraintBottom_toTopOf="@+id/users_emailid"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/users_name"
+        app:layout_constraintVertical_bias="0.456" />
+
+    <TextView
+        android:id="@+id/users_emailid"
+        android:layout_width="321dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:text="@string/email_id"
+        app:layout_constraintBottom_toTopOf="@+id/users_bal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/users_accno" />
+
+    <TextView
+        android:id="@+id/users_bal"
+        android:layout_width="321dp"
+        android:layout_height="59dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/balance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/users_name"
+        app:layout_constraintVertical_bias="0.413" />
+
+    <Button
+        android:id="@+id/transfer_money"
+        android:layout_width="281dp"
+        android:layout_height="82dp"
+        android:text="Transfer Amount"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/users_bal" />
+</androidx.constraintlayout.widget.ConstraintLayout>
