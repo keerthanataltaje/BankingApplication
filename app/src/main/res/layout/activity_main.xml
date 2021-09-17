@@ -15,21 +15,45 @@
         app:backgroundTint="#673AB7"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.499" />
+        app:layout_constraintVertical_bias="0.608" />
 
     <TextView
         android:id="@+id/bankingapplication"
-        android:layout_width="246dp"
-        android:layout_height="39dp"
-        android:text="Banking  Application"
+        android:layout_width="264dp"
+        android:layout_height="55dp"
+        android:text="Mobile Banking"
         android:textColor="#121213"
-        android:textSize="24sp"
+        android:textSize="34sp"
         app:layout_constraintBottom_toTopOf="@+id/viewusers"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.455"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.177" />
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleType="center"
+        android:src="@drawable/bankicon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="146dp" />
+
+    <Button
+        android:id="@+id/viewtransfers"
+        android:layout_width="276dp"
+        android:layout_height="77dp"
+        android:text="View Transactions"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.384" />
+        app:layout_constraintTop_toBottomOf="@+id/viewusers"
+        app:layout_constraintVertical_bias="0.184" />
 </androidx.constraintlayout.widget.ConstraintLayout>

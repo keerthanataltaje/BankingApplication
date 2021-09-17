@@ -68,9 +68,9 @@ class TransferAdapter extends RecyclerView.Adapter<TransferAdapter.ViewHolder> {
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         TransferModel details =  mData.get(position);
-        holder.from_user.setText(details.getFrom_());
-        holder.to_user.setText(details.getTo_());
-        holder.amount_.setText(details.getAmt());
+        holder.from_user.setText("From :"+details.getFrom_());
+        holder.to_user.setText("To : "+details.getTo_());
+        holder.amount_.setText("Amount : Rs "+details.getAmt());
         holder.time_.setText(details.getTime_());
     }
 
