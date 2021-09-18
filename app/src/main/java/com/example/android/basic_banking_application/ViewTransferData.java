@@ -18,14 +18,15 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
  class TransferModel {
-    String from_, to_, amt,time_;
+    String from_, to_, amt,time_,status;
     double balance;
-    public TransferModel(String from_user, String to_user, String amount,String timestamp)
+    public TransferModel(String from_user, String to_user, String amount,String timestamp,String status)
     {
         this.from_=from_user;
         this.to_=to_user;
         this.amt=amount;
         this.time_=timestamp;
+        this.status=status;
     }
     public String getFrom_()
     {
@@ -42,6 +43,10 @@ import java.util.List;
 
     public String getTime_() {
         return time_;
+    }
+    public String getStatus()
+    {
+        return status;
     }
 }
 class TransferAdapter extends RecyclerView.Adapter<TransferAdapter.ViewHolder> {
@@ -72,6 +77,7 @@ class TransferAdapter extends RecyclerView.Adapter<TransferAdapter.ViewHolder> {
         holder.to_user.setText("To : "+details.getTo_());
         holder.amount_.setText("Amount : Rs "+details.getAmt());
         holder.time_.setText(details.getTime_());
+        holder.stat.setText(details.getStatus());
     }
 
     // total number of rows
@@ -84,7 +90,7 @@ class TransferAdapter extends RecyclerView.Adapter<TransferAdapter.ViewHolder> {
 
     // stores and recycles views as they are scrolled off screen
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        TextView from_user,to_user,amount_,time_;
+        TextView from_user,to_user,amount_,time_,stat;
 
 
         ViewHolder(View itemView) {
@@ -93,6 +99,7 @@ class TransferAdapter extends RecyclerView.Adapter<TransferAdapter.ViewHolder> {
             to_user=itemView.findViewById(R.id.touser);
             amount_=itemView.findViewById(R.id.t_amount);
             time_=itemView.findViewById(R.id.timestamp);
+            stat=itemView.findViewById(R.id.status);
             itemView.setOnClickListener(this);
         }
 
@@ -140,7 +147,8 @@ public class ViewTransferData extends AppCompatActivity {
             String to = cursor.getString(3);
             String amount = cursor.getString(4);
             String time = cursor.getString(1);
-            TransferModel model = new TransferModel(from, to, amount, time);
+            String sta = cursor.getString(5);
+            TransferModel model = new TransferModel(from, to, amount, time,sta);
             transferlist.add(model);
         }
 

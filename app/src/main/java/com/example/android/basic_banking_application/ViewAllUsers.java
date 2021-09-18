@@ -49,7 +49,7 @@ public class ViewAllUsers extends AppCompatActivity {
 
     }
     public void onItemClick(View view, int position) {
-        Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
         Intent intent = new Intent(ViewAllUsers.this,ViewUserDetails.class);
         intent.putExtra("Id",adapter.getItem(position));
         startActivity(intent);

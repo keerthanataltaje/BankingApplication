@@ -102,7 +102,7 @@ public class SendTo extends AppCompatActivity {
     DatabaseHandler dbhandler;
     List<Model> senduserlist = new ArrayList<>();
     SendToAdapter adapter;
-    String contact_no,transferableamount,date,username;
+    String contact_no,transferableamount,date,username,to_name;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -140,6 +140,7 @@ public class SendTo extends AppCompatActivity {
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
     }
+
     public void onItemClick(View view, int position) {
         String fromuser=adapter.getname(position);
         String fromnum=adapter.getItem(position);
@@ -147,7 +148,7 @@ public class SendTo extends AppCompatActivity {
             Toast.makeText(this, "You are transfering money to yourself,INVALID!!!", Toast.LENGTH_SHORT).show();
         else {
             Toast.makeText(this, "please confirm", Toast.LENGTH_SHORT).show();
-
+            to_name=adapter.getname(position);
             getUserConfirmation(adapter.getItem(position), adapter.getname(position),fromuser,fromnum);
         }
     }
@@ -183,7 +184,7 @@ public class SendTo extends AppCompatActivity {
         });
                 cbuilder.setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        new DatabaseHandler(SendTo.this).insertTransferDetails(date, name, "Cancelled", transferableamount, "Failed");
+                        new DatabaseHandler(SendTo.this).insertTransferDetails(date, username, name, transferableamount, "Failed");
                         Toast.makeText(SendTo.this, "Transaction Cancelled!", Toast.LENGTH_LONG).show();
                         transferableamount=null;
                         dialog.dismiss();
@@ -200,7 +201,7 @@ public class SendTo extends AppCompatActivity {
                 .setPositiveButton("YES", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        new DatabaseHandler(SendTo.this).insertTransferDetails(date, username, "Cancelled", transferableamount, "Failed");
+                        new DatabaseHandler(SendTo.this).insertTransferDetails(date, username, to_name, transferableamount, "Failed");
                         Toast.makeText(SendTo.this, "Transaction Cancelled!", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(SendTo.this, MainActivity.class));
                         finish();

@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/Row_User"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="10dp">
+
     <LinearLayout
-       android:id="@+id/user_details"
+        android:id="@+id/user_details"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
@@ -21,14 +21,15 @@
             android:text="Hello"
             android:textSize="20sp" />
 
-    <TextView
-        android:id="@+id/touser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="hello"
-        android:layout_weight="1"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/touser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="hello"
+            android:textSize="20sp" />
     </LinearLayout>
+
     <LinearLayout
 
         android:id="@+id/details"
@@ -36,20 +37,31 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:padding="10dp">
-    <TextView
-        android:id="@+id/t_amount"
-        android:text="Hello"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_weight="1"
-        android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/t_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hello"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Hello"
+            android:textSize="20sp" />
+    </LinearLayout>
+
     <TextView
         android:id="@+id/timestamp"
-        android:text="Hello"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         android:layout_weight="1"
-        android:textSize="20sp"/>
-    </LinearLayout>
+        android:text="Hello"
+        android:textSize="20sp" />
+
 
 </LinearLayout>
